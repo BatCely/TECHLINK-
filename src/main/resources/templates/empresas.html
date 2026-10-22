@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Empresas - TechLink</title>
+</head>
+<body>
+  <h1>Empresas cadastradas</h1>
+
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>ID</th>
+      <th>Razão social</th>
+      <th>CNPJ</th>
+      <th>E-mail</th>
+    </tr>
+    <tr th:each="e : ${empresas}">
+      <td th:text="${e.id}"></td>
+      <td th:text="${e.razaoSocial}"></td>
+      <td th:text="${e.cnpj}"></td>
+      <td th:text="${e.email}"></td>
+    </tr>
+  </table>
+
+  <p><a th:href="@{/empresas/nova}">Cadastrar nova empresa</a></p>
+</body>
+</html>
